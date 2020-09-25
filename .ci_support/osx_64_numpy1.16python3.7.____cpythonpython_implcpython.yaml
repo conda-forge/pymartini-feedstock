@@ -22,3 +22,7 @@ python_impl:
 - cpython
 target_platform:
 - osx-64
+zip_keys:
+- - numpy
+  - python
+  - python_impl
