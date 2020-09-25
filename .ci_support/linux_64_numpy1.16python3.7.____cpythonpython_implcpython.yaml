@@ -20,3 +20,7 @@ python_impl:
 - cpython
 target_platform:
 - linux-64
+zip_keys:
+- - numpy
+  - python
+  - python_impl
