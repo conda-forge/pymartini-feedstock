@@ -1,5 +1,5 @@
-{% set version = "0.4.0" %}
-{% set build = 1 %}
+{% set version = "0.4.1" %}
+{% set build = 0 %}
 {% set name = "pymartini" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9edf24d812fe79814a862dfec641d600f034da777fb06cf4234c8735a3d58624
+  sha256: 36356393a3c658bfc523b69b8b7135c042d81190cfa1b79614e992af7de45405
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<36] [python_impl == 'pypy']
   script: {{ PYTHON }} -m pip install . -vv
 
