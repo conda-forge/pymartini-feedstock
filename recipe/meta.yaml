@@ -28,6 +28,7 @@ requirements:
     - numpy
     - cython
     - pip
+    - setuptools
   run:
     - python
 
