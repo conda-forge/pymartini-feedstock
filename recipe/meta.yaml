@@ -12,8 +12,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<36] [python_impl == 'pypy']
-  script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<311]
+  script:
+    # The sdist ships a martini.c generated against numpy 2.5 headers, which
+    # don't exist for Python 3.11. Regenerate it against the host numpy.
+    - rm pymartini/martini.c  # [unix]
+    - del pymartini\martini.c  # [win]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -28,7 +33,7 @@ requirements:
     - numpy
     - cython
     - pip
-    - setuptools
+    - setuptools >=77
   run:
     - python
 
